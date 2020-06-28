@@ -1,7 +1,10 @@
 <template>
     <div>
          <b-navbar :toggleable="BNavBar.toggleable" :type="BNavBar.type" :variant="BNavBar.variant">
-            <b-navbar-brand href="/">{{ header.title}}</b-navbar-brand>
+             <div class="toogle-btn">
+                <span @click="tooglebtn()">&#9776;</span>
+            </div>
+            <b-navbar-brand href="/"><img class="logo" src="../assets/logo.png" alt=""></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,7 +18,6 @@
                 <!-- Using 'button-content' slot -->
                 <template v-slot:button-content>
                     <b-avatar variant="info"></b-avatar>
-                    <em>{{ item.fullName }}</em>
                 </template>
                 <b-dropdown-item href="#">{{ item.profile }}</b-dropdown-item>
                 <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -39,8 +41,8 @@ export default {
             ],
             BNavBar: {
                 toggleable: 'lg',
-                type: 'dark',
-                variant: 'info'
+                type: 'light',
+                variant: 'light'
             },
             profile: [
                 {
@@ -56,5 +58,26 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+.logo{
+    height: 50px;
+    width: 150px;
+}
+.toogle-btn {
+        position: relative;
+        left: 0px;
+        top:auto;
+        cursor: pointer;
+        :hover {
+            background: rgba(23, 162, 184, .5);
+            border: 0.5px solid rgb(236, 233, 233);
+        }
+        span {
+            display: block;
+            width: 50px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 30px;
+            border: 1px solid  rgba(32, 206, 233, 0.5);
+        }
+    }
 </style>

@@ -13,8 +13,8 @@ Vue.use(VueRouter);
       component: Home
     },
     {
-      path: '/detail/:avengerName',
-      name: 'DetailAvenger',
+      path: '/detail/',
+      name: 'settings',
       component: DetailAvengerView
     },
     {

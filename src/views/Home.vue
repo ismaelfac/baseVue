@@ -1,20 +1,6 @@
 <template>
   <div>
-    <b-jumbotron bg-variant="info" text-variant="white">
-      <template v-slot:header>Panel de Control</template>
-
-      <template v-slot:lead>
-        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured content or information.
-      </template>
-
-      <hr class="my-4">
-
-      <p>
-        It uses utility classes for typography and spacing to space content out within the larger
-        container.
-      </p>
-    </b-jumbotron>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repudiandae et reiciendis esse natus cum fuga similique enim. Dignissimos reiciendis quidem corrupti recusandae, saepe ipsum at quas porro sit deserunt?</p>
   </div>
 </template>
 
