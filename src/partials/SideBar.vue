@@ -37,8 +37,8 @@ export default {
     }
 #sidebar {
     position: fixed;
-    width: 200px;
-    height: auto;
+    width: auto;
+    height: 100%;
     background: rgba(3, 3, 3, 0.9);
     border-radius: 0px 15px 15px 0px;
     left: -200px;
@@ -50,7 +50,7 @@ export default {
     }
     .toogle-btn {
         position: absolute;
-        left: 201px;
+        left: 200px;
         top:0px;
         cursor: pointer;
         :hover {

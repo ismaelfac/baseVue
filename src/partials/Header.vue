@@ -9,18 +9,46 @@
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
-            <b-navbar-brand v-for="item in items" :key="item.id" :to="{name:item.link}">{{ item.title}}</b-navbar-brand>
             
 
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" v-for="item in profile" :key="item.id">
+                <div class="h2 mb-0 m-auto">
+                    <b-icon icon="question-circle" class="mr-2"></b-icon>
+                    <b-icon icon="gear"></b-icon>
+                </div>
                 <b-nav-item-dropdown right>
                 <!-- Using 'button-content' slot -->
                 <template v-slot:button-content>
                     <b-avatar variant="info"></b-avatar>
                 </template>
-                <b-dropdown-item href="#">{{ item.profile }}</b-dropdown-item>
-                <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+               <b-dropdown-item-button>
+         <b-icon icon="lock-fill" aria-hidden="true"></b-icon>
+         Locked <span class="sr-only">(Click to unlock)</span>
+      </b-dropdown-item-button>
+      <b-dropdown-divider></b-dropdown-divider>
+      <b-dropdown-group header="Choose options" class="small">
+        <b-dropdown-item-button>
+           <b-icon icon="blank" aria-hidden="true"></b-icon>
+           Option A <span class="sr-only">(Not selected)</span>
+        </b-dropdown-item-button>
+        <b-dropdown-item-button>
+           <b-icon icon="check" aria-hidden="true"></b-icon>
+           Option B <span class="sr-only">(Selected)</span>
+        </b-dropdown-item-button>
+         <b-dropdown-item-button>
+           <b-icon icon="blank" aria-hidden="true"></b-icon>
+           Option C <span class="sr-only">(Not selected)</span>
+        </b-dropdown-item-button>
+      </b-dropdown-group>
+      <b-dropdown-divider></b-dropdown-divider>
+      <b-dropdown-item-button>Some action</b-dropdown-item-button>
+      <b-dropdown-item-button>Some other action</b-dropdown-item-button>
+      <b-dropdown-divider></b-dropdown-divider>
+      <b-dropdown-item-button variant="danger">
+        <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
+        Delete
+      </b-dropdown-item-button>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
             </b-collapse>
@@ -74,7 +102,7 @@ export default {
         span {
             display: block;
             width: 50px;
-            border-radius: 5px;
+            border-radius: 50px;
             text-align: center;
             font-size: 30px;
             border: 1px solid  rgba(32, 206, 233, 0.5);
