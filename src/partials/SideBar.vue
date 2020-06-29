@@ -1,22 +1,20 @@
 <template>
     <div id="sidebar" :class="{ active: isActive }">
-        <div class="toogle-btn">
-            <span @click="tooglebtn()">&#9776;</span>
-        </div>
         <b-list-group class="listSlider" v-for="item in items" :key="item.id">
             <b-list-group-item class="d-flex justify-content-between align-items-center" :to="{name:item.link}" :active="item.isActive">
                 {{ item.title }}
-                <b-badge variant="primary" pill>{{ item.count ? item.count : '0'}}</b-badge>
+                <b-badge variant="primary" pill>{{ item.count ? item.count : ''}}</b-badge>
             </b-list-group-item>
         </b-list-group>
     </div>
 </template>
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
     name: 'SideBar',
     data() {
         return{
-            isActive:false,
+            isActive: this.tooglebtn,
             items: [
                 {id: 1, title:'Dasboard', link:'home', count: 2, isActive:false},
                 {id: 2, title:'Configuracion', link:'settings', count: null, isActive:false},
@@ -24,9 +22,12 @@ export default {
             ]
         }
     },
+    computed: mapState({
+        tooglebtn: state => state.SideBar.toogle_btn
+    }),
     methods: {
         tooglebtn() {
-            this.isActive = !this.isActive;
+            this.isActive = mapMutations('SET_TOOGLEBTN');
         }
     }
 }
@@ -37,7 +38,7 @@ export default {
     }
 #sidebar {
     position: fixed;
-    width: auto;
+    width: 15%;
     height: 100%;
     background: rgba(3, 3, 3, 0.9);
     border-radius: 0px 15px 15px 0px;

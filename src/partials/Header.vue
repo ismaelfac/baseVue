@@ -56,6 +56,7 @@
     </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
     name: 'Header',
     props: { header: Object },
@@ -81,6 +82,14 @@ export default {
                     profileLink: 'profile'
                 }
             ]
+        }
+    },
+    computed: mapState({
+        tooglebtn: state => state.sidebar.toogle_btn
+    }),
+    methods: {
+        tooglebtn() {
+            this.$store.commit('SET_TOOGLEBTN');
         }
     }
 }
