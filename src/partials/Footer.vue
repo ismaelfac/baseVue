@@ -13,3 +13,8 @@ export default {
     props: { footer: Object }
 }
 </script>
+<style lang="scss" scoped>
+footer {
+    bottom: 0px;
+}
+</style>

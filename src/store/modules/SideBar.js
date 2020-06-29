@@ -6,9 +6,9 @@ export default {
         toogle_btn: false,
     },
     mutations: {
-        [SET_TOOGLEBTN](state, toogle_btn){
-            console.log('SET_TOOGLEBTN');
-            state.toogle_btn = !toogle_btn;
+        [SET_TOOGLEBTN](state){
+            console.log('SET_TOOGLEBTN'+state);
+            state.toogle_btn = !state.toogle_btn;
         }
     },
     getters: {

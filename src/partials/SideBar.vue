@@ -9,12 +9,11 @@
     </div>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState } from "vuex";
 export default {
     name: 'SideBar',
     data() {
         return{
-            isActive: this.tooglebtn,
             items: [
                 {id: 1, title:'Dasboard', link:'home', count: 2, isActive:false},
                 {id: 2, title:'Configuracion', link:'settings', count: null, isActive:false},
@@ -23,12 +22,9 @@ export default {
         }
     },
     computed: mapState({
-        tooglebtn: state => state.SideBar.toogle_btn
+        isActive: state => state.SideBar.toogle_btn
     }),
     methods: {
-        tooglebtn() {
-            this.isActive = mapMutations('SET_TOOGLEBTN');
-        }
     }
 }
 </script>
@@ -40,32 +36,15 @@ export default {
     position: fixed;
     width: 15%;
     height: 100%;
-    background: rgba(3, 3, 3, 0.9);
+    background: rgba(230, 230, 230, 0.5);
     border-radius: 0px 15px 15px 0px;
     left: -200px;
     .listSlider b-list-group-item {
         color: rgba(80, 77, 77, 0.9);
         text-align: center;
+        border-radius: 0px;
         padding: 15px 10px;
         border-bottom: 1px solid rgba(100, 100, 100, .3);
-    }
-    .toogle-btn {
-        position: absolute;
-        left: 200px;
-        top:0px;
-        cursor: pointer;
-        :hover {
-            background: rgba(23, 162, 184, .5);
-            border: 0.5px solid rgb(71, 70, 70);
-        }
-        span {
-            display: block;
-            width: 50px;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 30px;
-            border: 1px solid #000;
-        }
     }
 }
 </style>

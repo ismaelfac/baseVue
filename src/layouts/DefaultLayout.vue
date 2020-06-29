@@ -1,19 +1,14 @@
 <template>
-    <div :style="{ background: fondo.backgroundColor }">
+    <div>
         <!-- header -->
         <HeaderPartials :header="header"></HeaderPartials>
         <!-- end header -->
         
         <!-- main -->
-        <b-container fluid="xl" class="bv-example-row">
+        <b-container fluid="xl" right>
             <b-row>
                 <b-col col lg="2"><Sidebar></Sidebar></b-col>
                 <b-col cols="10" md="auto"><router-view></router-view></b-col>
-                <b-col col lg="2"><b-button-group vertical>
-                    <b-button>Top</b-button>
-                    <b-button>Middle</b-button>
-                    <b-button>Bottom</b-button>
-                </b-button-group></b-col>
             </b-row>
         </b-container>
         <!-- end main -->
@@ -34,9 +29,6 @@ export default {
         return {
             header: {
                 title: 'Base'
-            },
-            fondo: {
-                backgroundColor: 'rgba(23, 162, 184, .9)'
             },
             breadcrumb: []
         }

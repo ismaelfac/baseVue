@@ -9,8 +9,7 @@
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
-            
-
+        
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" v-for="item in profile" :key="item.id">
                 <div class="h2 mb-0 m-auto">
@@ -56,13 +55,12 @@
     </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapMutations } from 'vuex';
 export default {
     name: 'Header',
     props: { header: Object },
     data() {
         return { 
-            classNav: 'navbar navbar-dark bg-dark',
             items: [
                 {id: 1, title: 'option1', link: 'profile'},
                 {id: 2, title: 'option2', link: 'home'},
@@ -84,12 +82,10 @@ export default {
             ]
         }
     },
-    computed: mapState({
-        tooglebtn: state => state.sidebar.toogle_btn
-    }),
     methods: {
         tooglebtn() {
-            this.$store.commit('SET_TOOGLEBTN');
+            console.log('entro')
+            mapMutations(['SET_TOOGLEBTN']);
         }
     }
 }
@@ -105,8 +101,8 @@ export default {
         top:auto;
         cursor: pointer;
         :hover {
-            background: rgba(23, 162, 184, .5);
-            border: 0.5px solid rgb(236, 233, 233);
+            background: rgba(224, 224, 224, .8);
+            border: 0.5px solid rgba(236, 233, 233, .8);
         }
         span {
             display: block;
