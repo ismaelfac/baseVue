@@ -2,7 +2,7 @@
     <div>
          <b-navbar :toggleable="BNavBar.toggleable" :type="BNavBar.type" :variant="BNavBar.variant">
              <div class="toogle-btn">
-                <span @click="tooglebtn()">&#9776;</span>
+                <span @click="toogle()">&#9776;</span>
             </div>
             <b-navbar-brand href="/"><img class="logo" src="../assets/logo.png" alt=""></b-navbar-brand>
 
@@ -12,14 +12,17 @@
         
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto" v-for="item in profile" :key="item.id">
-                <div class="h2 mb-0 m-auto">
+                <template>
+                <div class="h3 m-auto mr-2">
                     <b-icon icon="question-circle" class="mr-2"></b-icon>
                     <b-icon icon="gear"></b-icon>
+                    <b-icon icon="grid3x3-gap-fill"></b-icon>
                 </div>
+                </template>
                 <b-nav-item-dropdown right>
                 <!-- Using 'button-content' slot -->
                 <template v-slot:button-content>
-                    <b-avatar variant="info"></b-avatar>
+                    <b-avatar variant="info" src="https://placekitten.com/300/300"></b-avatar>
                 </template>
                <b-dropdown-item-button>
          <b-icon icon="lock-fill" aria-hidden="true"></b-icon>
@@ -55,7 +58,6 @@
     </div>
 </template>
 <script>
-import { mapMutations } from 'vuex';
 export default {
     name: 'Header',
     props: { header: Object },
@@ -83,9 +85,8 @@ export default {
         }
     },
     methods: {
-        tooglebtn() {
-            console.log('entro')
-            mapMutations(['SET_TOOGLEBTN']);
+        toogle() {
+            this.$store.commit("SideBar/SET_TOOGLEBTN");            
         }
     }
 }

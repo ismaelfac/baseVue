@@ -45,6 +45,9 @@ export default {
         border-radius: 0px;
         padding: 15px 10px;
         border-bottom: 1px solid rgba(100, 100, 100, .3);
+        height: 150px;
+        overflow: hidden;
+        
     }
 }
 </style>
