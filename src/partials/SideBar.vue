@@ -1,11 +1,13 @@
 <template>
     <div id="sidebar" :class="{ active: isActive }">
         <b-list-group class="listSlider" v-for="item in items" :key="item.id">
-            <b-list-group-item class="d-flex justify-content-between align-items-center" :to="{name:item.link}" :active="item.isActive">
+            <b-list-group-item class="d-flex justify-content-between align-items-center" :to="{name:item.link}" :active="active">
                 {{ item.title }}
                 <b-badge variant="primary" pill>{{ item.count ? item.count : ''}}</b-badge>
             </b-list-group-item>
         </b-list-group>
+        <hr class="my-4">
+
     </div>
 </template>
 <script>
@@ -15,16 +17,18 @@ export default {
     data() {
         return{
             items: [
-                {id: 1, title:'Dasboard', link:'home', count: 2, isActive:false},
-                {id: 2, title:'Configuracion', link:'settings', count: null, isActive:false},
-                {id: 3, title:'Perfil', link:'profile', count: null, isActive:false}
-            ]
+                {id: 1, title:'Dasboard', link:'home', count: 2},
+                {id: 2, title:'Configuracion', link:'settings', count: null},
+                {id: 3, title:'Perfil', link:'profile', count: null}
+            ],
+            active: false
         }
     },
     computed: mapState({
         isActive: state => state.SideBar.toogle_btn
     }),
     methods: {
+
     }
 }
 </script>

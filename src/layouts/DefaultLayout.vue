@@ -44,7 +44,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 html {
-  background:  url("https://i.pinimg.com/originals/da/4c/bb/da4cbb2d23881879e8729042629c3684.jpg");
+    background-color: transparent;
+    background:  url("https://i.pinimg.com/originals/da/4c/bb/da4cbb2d23881879e8729042629c3684.jpg");
 }
 
 .main-section {
