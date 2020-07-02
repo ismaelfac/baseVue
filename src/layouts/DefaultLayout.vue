@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <!-- header -->
         <HeaderPartials :header="header"></HeaderPartials>
         <!-- end header -->
@@ -48,8 +48,8 @@ html {
     background:  url("https://i.pinimg.com/originals/da/4c/bb/da4cbb2d23881879e8729042629c3684.jpg");
 }
 
-.main-section {
-    padding: 0;
-    margin: 0;
+.main {
+    padding: 0px;
+    margin: 0px;
 }
 </style>

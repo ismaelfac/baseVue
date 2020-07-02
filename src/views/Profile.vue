@@ -1,28 +1,41 @@
 <template>
   <div>
-    <b-jumbotron bg-variant="light" text-variant="dark" border-variant="white">
-    <template v-slot:header>Perfil </template>
+    <!-- Tabs with card integration -->
+    <b-card no-body>
+      <b-tabs v-model="tabIndex" small card>
+        <b-tab title="General">
+          <DemograPerson></DemograPerson>
+        </b-tab>
+        <b-tab title="Edit profile">
+          <PersonalInformation></PersonalInformation>
+        </b-tab>
+      </b-tabs>
+    </b-card>
 
-    <template v-slot:lead>
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-      featured content or information.
-    </template>
+    <!-- Control buttons-->
+    <div class="text-center">
+      <b-button-group class="mt-2">
+        <b-button @click="tabIndex--">Previous</b-button>
+        <b-button @click="tabIndex++">Next</b-button>
+      </b-button-group>
 
-    <hr class="my-4">
-
-    <p>
-      It uses utility classes for typography and spacing to space content out within the larger
-      container.
-    </p>
-  </b-jumbotron>
+      <div class="text-muted">Current Tab: {{ tabIndex }}</div>
+    </div>
   </div>
 </template>
 <script>
+import DemograPerson from '../forms/DemograPerson'
+import PersonalInformation from '../forms/PersonalInformation'
 export default {
   name: 'Profile',
+  components: { PersonalInformation, DemograPerson },
+  data() {
+      return {
+        tabIndex: 1
+      }
+    }
 }
 </script>
 <style lang="scss" scoped>
-b-jumbotron {
-}
+
 </style>
