@@ -10,4 +10,6 @@ export default {
   components: { DefaultLayout }
 }
 </script>
-<style lang="scss" src="./_scss/main.scss"></style>
+<style lang="scss" src="./_scss/main.scss">
+
+</style>
