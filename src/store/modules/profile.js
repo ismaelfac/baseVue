@@ -2,12 +2,12 @@ export const SET_PROFILE = 'SET_PROFILE';
 export const SET_QUERY = 'SET_QUERY';
 export const SET_ACTIVE = 'SET_ACTIVE';
 export const SET_STATEAPP = 'SET_STATEAPP';
-const axios = require('axios');
 
 export default {
     namespaced: true,
     state: {
         profile: null,
+
         filter: {
             query: '',
             is_active: true,
@@ -34,15 +34,6 @@ export default {
         }
     },
     actions: {
-        async getProfile({commit, rootState}, query) {
-            console.log('Entro Store profile: '+query);
-            await axios.get('/employee',{
-                headers: {
-                    Authorization: 'Bearer ' + rootState.auth.token //the token is a variable which holds the token
-                }
-            })
-            .then(response => response.data.data)
-            .then(profile => commit(SET_PROFILE, profile));
-        }
+        
     }
 };

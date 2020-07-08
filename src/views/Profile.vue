@@ -4,10 +4,10 @@
     <b-card no-body>
       <b-tabs v-model="tabIndex" small card>
         <b-tab title="General">
-          <DemograPerson></DemograPerson>
-        </b-tab>
-        <b-tab title="Edit profile">
           <PersonalInformation></PersonalInformation>
+        </b-tab>
+        <b-tab title="Demografica">
+          <DemograPerson></DemograPerson>
         </b-tab>
       </b-tabs>
     </b-card>
